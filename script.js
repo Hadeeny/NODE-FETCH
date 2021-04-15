@@ -13,6 +13,7 @@ https.get("https:jsonplaceholder.typicode.com/posts", (res) => {
   res.on("data", (data) => {
     body += data;
   });
+//   write the body to post.txt
   res.on("end", () => {
     fs.writeFile(path.join(__dirname, "/result", "post.txt"), body, () => {
       console.log("new file created");
